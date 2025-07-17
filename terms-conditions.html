@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - Sania Job Bowl</title>
+    <meta name="description" content="Terms and Conditions for Sania Job Bowl Pvt Ltd services. By using our services, you agree to these terms.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --secondary-blue: #3b82f6;
+            --accent-orange: #f97316;
+            --dark-gray: #1f2937;
+            --medium-gray: #4b5563;
+            --light-gray: #f3f4f6;
+            --border-gray: #e5e7eb;
+            --pure-white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            background: var(--pure-white);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: var(--pure-white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+        
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--pure-white);
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Content */
+        .content {
+            padding: 80px 0;
+        }
+        
+        .content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-gray);
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 0.5rem;
+        }
+        
+        .content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+            color: var(--primary-blue);
+        }
+        
+        .content p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: var(--medium-gray);
+        }
+        
+        .content ul {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+        
+        .content ol {
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+        }
+        
+        .content li {
+            margin-bottom: 0.5rem;
+            color: var(--medium-gray);
+        }
+        
+        .highlight {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-left: 4px solid var(--primary-blue);
+            margin: 2rem 0;
+        }
+        
+        .highlight p {
+            margin-bottom: 0;
+        }
+        
+        .warning {
+            background: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid #ef4444;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .warning p {
+            margin-bottom: 0;
+            color: #dc2626;
+        }
+        
+        .contact-info {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        
+        .contact-info h3 {
+            margin-top: 0;
+            color: var(--dark-gray);
+        }
+        
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-info a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        
+        .contact-info a:hover {
+            color: var(--accent-orange);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-gray);
+            color: var(--pure-white);
+            padding: 40px 0;
+            margin-top: 80px;
+        }
+        
+        .footer-content {
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--pure-white);
+        }
+        
+        .footer-bottom {
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--pure-white);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .content h2 {
+                font-size: 1.5rem;
+            }
+            
+            .content h3 {
+                font-size: 1.25rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="container" style="max-width: 1200px;">
+            <a href="index.html" class="logo">Sania Job Bowl</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Get Started</a></li>
+            </ul>
+            <button class="mobile-menu" id="mobileMenu">☰</button>
+        </nav>
+    </header>
+    
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Terms & Conditions</h1>
+            <p>Please read these terms carefully before using our services</p>
+        </div>
+    </section>
+    
+    <!-- Content -->
+    <section class="content">
+        <div class="container">
+            <div class="highlight">
+                <p><strong>Effective Date:</strong> January 1, 2024</p>
+                <p><strong>Last Updated:</strong> January 1, 2024</p>
+            </div>
+            
+            <h2>1. Acceptance of Terms</h2>
+            <p>
+                By accessing and using the services provided by Sania Job Bowl Pvt Ltd ("Company," "we," "us," or "our"), 
+                you agree to be bound by these Terms and Conditions. If you do not agree to these terms, 
+                please do not use our services.
+            </p>
+            
+            <h2>2. Company Information</h2>
+            <p>
+                Sania Job Bowl Pvt Ltd is a recruitment and workforce solutions company incorporated under Indian law 
+                and governed by Indian business regulations. Our registered office is located at:
+            </p>
+            <p>
+                No. 23 (Kh. No. 187/1260/28/23), Hennur Village, Banaswadi, Bangalore North, Karnataka, India - PIN 560043
+            </p>
+            
+            <h2>3. Services Offered</h2>
+            <p>We provide the following services:</p>
+            <ul>
+                <li><strong>Sania One Day Hiring:</strong> Rapid workforce deployment services</li>
+                <li><strong>Sania Job Mitra:</strong> Community-based job placement services</li>
+                <li><strong>Sania Payroll Solutions:</strong> Payroll processing and compliance services</li>
+                <li><strong>Sania Skill Academy:</strong> Training and skill development programs</li>
+                <li><strong>Sania Global Placements:</strong> International job placement services</li>
+                <li><strong>Sania General Hiring:</strong> Permanent recruitment services</li>
+            </ul>
+            
+            <h2>4. User Obligations</h2>
+            
+            <h3>4.1 For Job Seekers</h3>
+            <p>As a job seeker using our services, you agree to:</p>
+            <ul>
+                <li>Provide accurate and truthful information about your qualifications and experience</li>
+                <li>Submit genuine documents and certifications</li>
+                <li>Comply with all employment terms and conditions</li>
+                <li>Maintain professional conduct during the recruitment process</li>
+                <li>Notify us of any changes in your employment status or availability</li>
+            </ul>
+            
+            <h3>4.2 For Employers</h3>
+            <p>As an employer using our services, you agree to:</p>
+            <ul>
+                <li>Provide accurate job descriptions and requirements</li>
+                <li>Comply with all applicable labor laws and regulations</li>
+                <li>Pay agreed-upon fees and compensation on time</li>
+                <li>Maintain a safe and legal working environment</li>
+                <li>Treat all candidates fairly and without discrimination</li>
+            </ul>
+            
+            <h2>5. Service Fees and Payment</h2>
+            <p>
+                Service fees vary based on the type of service requested. All fees must be paid as agreed 
+                upon in the service agreement. Late payments may result in service suspension or termination.
+            </p>
+            
+            <h2>6. Confidentiality</h2>
+            <p>
+                We maintain strict confidentiality regarding all client information and candidate details. 
+                Information is shared only with explicit consent or as required by law.
+            </p>
+            
+            <h2>7. Limitation of Liability</h2>
+            <p>
+                Sania Job Bowl Pvt Ltd acts as an intermediary between employers and job seekers. We are not 
+                responsible for:
+            </p>
+            <ul>
+                <li>Employment decisions made by employers</li>
+                <li>Workplace disputes or employment-related issues</li>
+                <li>Accuracy of information provided by third parties</li>
+                <li>Consequential or indirect damages</li>
+            </ul>
+            
+            <div class="warning">
+                <p><strong>Important:</strong> Our liability is limited to the service fees paid to us.</p>
+            </div>
+            
+            <h2>8. Compliance and Legal Requirements</h2>
+            <p>
+                All services are provided in compliance with Indian labor laws, including but not limited to:
+            </p>
+            <ul>
+                <li>The Contract Labour (Regulation and Abolition) Act, 1970</li>
+                <li>The Employee State Insurance Act, 1948</li>
+                <li>The Employees' Provident Fund Act, 1952</li>
+                <li>The Payment of Wages Act, 1936</li>
+                <li>The Minimum Wages Act, 1948</li>
+            </ul>
+            
+            <h2>9. Termination of Services</h2>
+            <p>
+                Either party may terminate services with appropriate notice as specified in the service agreement. 
+                We reserve the right to immediately terminate services for breach of terms or illegal activities.
+            </p>
+            
+            <h2>10. Dispute Resolution</h2>
+            <p>
+                Any disputes arising from these terms shall be resolved through:
+            </p>
+            <ol>
+                <li>Direct negotiation between the parties</li>
+                <li>Mediation, if negotiation fails</li>
+                <li>Arbitration under the Indian Arbitration and Conciliation Act, 2015</li>
+                <li>Courts in Bangalore, Karnataka, India (as a last resort)</li>
+            </ol>
+            
+            <h2>11. Intellectual Property</h2>
+            <p>
+                All content, trademarks, and intellectual property on our website and marketing materials 
+                belong to Sania Job Bowl Pvt Ltd and are protected by Indian and international copyright laws.
+            </p>
+            
+            <h2>12. Data Protection</h2>
+            <p>
+                We collect and process personal data in accordance with our Privacy Policy and applicable 
+                data protection laws. By using our services, you consent to such processing.
+            </p>
+            
+            <h2>13. Force Majeure</h2>
+            <p>
+                We are not liable for any failure to perform our obligations due to circumstances beyond 
+                our reasonable control, including natural disasters, government actions, or other force majeure events.
+            </p>
+            
+            <h2>14. Modifications to Terms</h2>
+            <p>
+                We reserve the right to modify these terms at any time. Changes will be communicated through 
+                our website or direct notification. Continued use of our services constitutes acceptance of 
+                modified terms.
+            </p>
+            
+            <h2>15. Governing Law</h2>
+            <p>
+                These terms are governed by the laws of India. Any legal proceedings will be conducted in 
+                the courts of Bangalore, Karnataka, India.
+            </p>
+            
+            <h2>16. Severability</h2>
+            <p>
+                If any provision of these terms is found to be invalid or unenforceable, the remaining 
+                provisions shall continue in full force and effect.
+            </p>
+            
+            <h2>17. Contact Information</h2>
+            <p>
+                For any questions regarding these terms and conditions, please contact us:
+            </p>
+            
+            <div class="contact-info">
+                <h3>Sania Job Bowl Pvt Ltd</h3>
+                <p>
+                    <strong>Address:</strong> No. 23, Hennur Village, Banaswadi, Bangalore North, Karnataka - 560043<br>
+                    <strong>Phone:</strong> <a href="tel:+919880687333">+91-9880687333</a><br>
+                    <strong>Email:</strong> <a href="mailto:contact@saniajobbowl.com">contact@saniajobbowl.com</a><br>
+                    <strong>Website:</strong> <a href="index.html">www.saniajobbowl.com</a>
+                </p>
+            </div>
+            
+            <div class="highlight">
+                <p><strong>By using our services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.</strong></p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Sania Job Bowl Pvt Ltd. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenu.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+    </script>
+</body>
+</html>

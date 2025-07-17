@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Sania Job Bowl</title>
+    <meta name="description" content="Learn about Sania Job Bowl Pvt Ltd - A Bangalore-based workforce solutions company aiming to bridge the gap between opportunity and talent.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-blue: #1e3a8a;
+            --secondary-blue: #3b82f6;
+            --accent-orange: #f97316;
+            --dark-gray: #1f2937;
+            --medium-gray: #4b5563;
+            --light-gray: #f3f4f6;
+            --border-gray: #e5e7eb;
+            --pure-white: #ffffff;
+            --success-green: #10b981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background: var(--pure-white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary-blue);
+        }
+        
+        .mobile-menu {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+        
+        /* Page Header */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            color: var(--pure-white);
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .breadcrumb {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .breadcrumb a {
+            color: var(--pure-white);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .breadcrumb a:hover {
+            opacity: 0.7;
+        }
+        
+        /* About Content */
+        .about-intro {
+            padding: 80px 0;
+            background: var(--pure-white);
+        }
+        
+        .about-intro-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-gray);
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .about-image {
+            position: relative;
+            height: 400px;
+            background: var(--light-gray);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        .about-image::before {
+            content: 'Team Working Together';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            text-align: center;
+        }
+        
+        /* Vision & Mission */
+        .vision-mission {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+        
+        .vm-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .vm-card {
+            background: var(--pure-white);
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .vm-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--accent-orange);
+        }
+        
+        .vm-card.vision::before {
+            background: var(--primary-blue);
+        }
+        
+        .vm-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--light-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+        
+        .vision .vm-icon {
+            color: var(--primary-blue);
+        }
+        
+        .mission .vm-icon {
+            color: var(--accent-orange);
+        }
+        
+        .vm-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+        }
+        
+        .vm-card p {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            line-height: 1.8;
+        }
+        
+        .mission-points {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+        
+        .mission-points li {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            color: var(--medium-gray);
+        }
+        
+        .mission-points li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success-green);
+            font-weight: bold;
+        }
+        
+        /* Group Entities */
+        .group-entities {
+            padding: 80px 0;
+            background: var(--pure-white);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--dark-gray);
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+        }
+        
+        .entities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .entity-card {
+            background: var(--light-gray);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .entity-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-blue);
+            background: var(--pure-white);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .entity-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-blue);
+            color: var(--pure-white);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .entity-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-gray);
+        }
+        
+        .entity-card p {
+            color: var(--medium-gray);
+            line-height: 1.8;
+        }
+        
+        /* Values Section */
+        .our-values {
+            padding: 80px 0;
+            background: var(--primary-blue);
+            color: var(--pure-white);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+        
+        .value-item {
+            text-align: center;
+        }
+        
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .value-item:hover .value-icon {
+            background: var(--accent-orange);
+            border-color: var(--accent-orange);
+            transform: scale(1.1);
+        }
+        
+        .value-item h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        
+        .value-item p {
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--accent-orange) 0%, #fb923c 100%);
+            color: var(--pure-white);
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            padding: 14px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid transparent;
+        }
+        
+        .btn-secondary {
+            background: var(--pure-white);
+            color: var(--primary-blue);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--light-gray);
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-gray);
+            color: var(--pure-white);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-section a {
+            color: #d1d5db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section a:hover {
+            color: var(--pure-white);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--pure-white);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .about-intro-content,
+            .vm-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .entities-grid,
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="container">
+            <a href="index.html" class="logo">Sania Job Bowl</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Get Started</a></li>
+            </ul>
+            <button class="mobile-menu" id="mobileMenu">☰</button>
+        </nav>
+    </header>
+    
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="fade-in">About Us</h1>
+            <div class="breadcrumb fade-in">
+                <a href="index.html">Home</a> / About Us
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Introduction -->
+    <section class="about-intro">
+        <div class="container">
+            <div class="about-intro-content">
+                <div class="about-text fade-in">
+                    <h2>Bridging the Gap Between Opportunity and Talent</h2>
+                    <p>
+                        Sania Job Bowl Pvt Ltd is a Bangalore-based workforce solutions company aiming to bridge the gap between 
+                        opportunity and talent. Our mission is to deliver fast, reliable, and people-first recruitment services to 
+                        businesses across sectors.
+                    </p>
+                    <p>
+                        We understand the challenges businesses face in finding the right talent quickly and the struggles job 
+                        seekers encounter in finding suitable opportunities. That's why we've built a comprehensive ecosystem that 
+                        addresses both sides of the employment equation.
+                    </p>
+                    <p>
+                        With our technology-driven approach and human-centric values, we're transforming how India hires and gets hired.
+                    </p>
+                </div>
+                <div class="about-image fade-in"></div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Vision & Mission -->
+    <section class="vision-mission">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Our Vision & Mission</h2>
+                <p>Guiding principles that drive our commitment to excellence</p>
+            </div>
+            
+            <div class="vm-grid">
+                <div class="vm-card vision fade-in">
+                    <div class="vm-icon">👁</div>
+                    <h3>Our Vision</h3>
+                    <p>To be India's most trusted hiring ecosystem empowering every job seeker with equal opportunity.</p>
+                </div>
+                
+                <div class="vm-card mission fade-in">
+                    <div class="vm-icon">🎯</div>
+                    <h3>Our Mission</h3>
+                    <ul class="mission-points">
+                        <li>Offer fast-track, tech-enabled recruitment services</li>
+                        <li>Build community trust through Job Mitra kiosks</li>
+                        <li>Provide compliant payroll and documentation services</li>
+                        <li>Upskill candidates through practical job-readiness programs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Group Entities -->
+    <section class="group-entities">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Our Group Entities</h2>
+                <p>Comprehensive solutions under one umbrella</p>
+            </div>
+            
+            <div class="entities-grid">
+                <div class="entity-card fade-in">
+                    <div class="entity-icon">⚡</div>
+                    <h3>Sania One Day Hiring</h3>
+                    <p>Rapid workforce deployment - We deploy verified staff for blue-collar and grey-collar roles within 24-48 hours.</p>
+                </div>
+                
+                <div class="entity-card fade-in">
+                    <div class="entity-icon">🤝</div>
+                    <h3>Sania Job Mitra</h3>
+                    <p>Rural mobilization and kiosk presence - Building trusted job seeker communities through modular kiosks across India.</p>
+                </div>
+                
+                <div class="entity-card fade-in">
+                    <div class="entity-icon">💰</div>
+                    <h3>Sania Payroll Solutions</h3>
+                    <p>Simplifying payroll and compliance - Managing complete workforce payroll operations from processing to documentation.</p>
+                </div>
+                
+                <div class="entity-card fade-in">
+                    <div class="entity-icon">🎓</div>
+                    <h3>Sania Skill Academy</h3>
+                    <p>Skilling for employability - Training candidates in job-readiness, soft skills, and safety for better placement outcomes.</p>
+                </div>
+                
+                <div class="entity-card fade-in">
+                    <div class="entity-icon">🌍</div>
+                    <h3>Sania Global Placements</h3>
+                    <p>Connecting Indian talent globally - International manpower sourcing and deployment for key industries worldwide.</p>
+                </div>
+                
+                <div class="entity-card fade-in">
+                    <div class="entity-icon">👔</div>
+                    <h3>Sania General Hiring</h3>
+                    <p>Professional hiring across industries - Permanent recruitment solutions for IT, Non-IT, and core sectors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Our Values -->
+    <section class="our-values">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 style="color: white;">Our Core Values</h2>
+                <p style="color: rgba(255,255,255,0.9);">The principles that guide everything we do</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-item fade-in">
+                    <div class="value-icon">🚀</div>
+                    <h3>Speed & Efficiency</h3>
+                    <p>We believe in rapid deployment without compromising on quality</p>
+                </div>
+                
+                <div class="value-item fade-in">
+                    <div class="value-icon">🤝</div>
+                    <h3>Trust & Transparency</h3>
+                    <p>Building lasting relationships through honest and open communication</p>
+                </div>
+                
+                <div class="value-item fade-in">
+                    <div class="value-icon">💡</div>
+                    <h3>Innovation</h3>
+                    <p>Leveraging technology to solve traditional recruitment challenges</p>
+                </div>
+                
+                <div class="value-item fade-in">
+                    <div class="value-icon">🌟</div>
+                    <h3>People First</h3>
+                    <p>Putting human needs at the center of our business model</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="fade-in">Join the Sania Family</h2>
+            <p class="fade-in">Experience the difference of working with India's most trusted recruitment partner</p>
+            <div class="fade-in">
+                <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Sania Job Bowl</h3>
+                    <p>Your trusted recruitment engine based in Bangalore, simplifying hiring for businesses and uplifting job seekers across India.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html#one-day-hiring">One Day Hiring</a></li>
+                        <li><a href="services.html#job-mitra">Job Mitra</a></li>
+                        <li><a href="services.html#payroll">Payroll Solutions</a></li>
+                        <li><a href="services.html#skill-academy">Skill Academy</a></li>
+                        <li><a href="services.html#global">Global Placements</a></li>
+                        <li><a href="services.html#general">General Hiring</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>No. 23, Hennur Village, Banaswadi<br>
+                    Bangalore North, Karnataka - 560043</p>
+                    <p>Phone: +91-9880687333<br>
+                    Email: contact@saniajobbowl.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sania Job Bowl Pvt Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenu.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+        
+        // Fade-in Animation on Scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        fadeElements.forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
