@@ -66,6 +66,10 @@
             text-decoration: none;
         }
         
+        .logo img {
+            height: 80px;
+        }
+        
         .nav-links {
             display: flex;
             list-style: none;
@@ -96,7 +100,7 @@
         .hero {
             background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
             color: var(--pure-white);
-            padding: 120px 0 80px;
+            padding: 160px 0 80px;
             position: relative;
             overflow: hidden;
         }
@@ -355,6 +359,38 @@
             line-height: 1.8;
         }
         
+        /* Client Logos Section */
+        .client-logos {
+            padding: 40px 0;
+            background: var(--primary-blue);
+            text-align: center;
+        }
+
+        .client-logos h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--pure-white);
+            margin-bottom: 2rem;
+        }
+
+        .logos-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .logos-container img {
+            height: 50px;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+
+        .logos-container img:hover {
+            opacity: 1;
+        }
+
         /* CTA Section */
         .cta-section {
             background: linear-gradient(135deg, var(--accent-orange) 0%, #fb923c 100%);
@@ -603,7 +639,9 @@
     <!-- Header & Navigation -->
     <header>
         <nav class="container">
-            <a href="index.html" class="logo">Sania Job Bowl</a>
+            <a href="index.html" class="logo">
+                <img src="assets/logo.jpg" alt="Sania Job Bowl Logo">
+            </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -742,6 +780,22 @@
         </div>
     </section>
     
+    <!-- Client Logos Section -->
+    <section class="client-logos">
+        <div class="container">
+            <h3 class="fade-in">Trusted by Leading Companies</h3>
+            <div class="logos-container fade-in">
+                <img src="assets/24-hours.png" alt="24-hours logo">
+                <img src="assets/clock.png" alt="clock logo">
+                <img src="assets/deal.png" alt="deal logo">
+                <img src="assets/expert.png" alt="expert logo">
+                <img src="assets/idea.png" alt="idea logo">
+                <img src="assets/india.png" alt="india logo">
+                <img src="assets/job-offer.png" alt="job-offer logo">
+            </div>
+        </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
@@ -823,6 +877,20 @@
         mobileMenu.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             mobileMenu.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Adjust logo size on scroll
+        const header = document.querySelector('header');
+        const logoImg = document.querySelector('.logo img');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.style.padding = '0.5rem 0';
+                logoImg.style.height = '60px';
+            } else {
+                header.style.padding = '1rem 0';
+                logoImg.style.height = '80px';
+            }
         });
         
         // Fade-in Animation on Scroll
